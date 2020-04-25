@@ -22,15 +22,15 @@ describe('app routes', () => {
     const tweet = await Tweet.create({ handle: 'Black Phillip', text: 'Wouldst thou like to live deliciously?' });
 
     return request(app)
-      .post('/api/v1/comments/')
-      .send({ tweetId: tweet._id, handle: 'Pinhead', text: 'We have such sights to show you!' });
-  //     .then(res => {
-  //     expect(res.body).toEqual({
-  //       _id: expect.any(String),
-  //       handle: 'Pinhead',
-  //       text: 'We have such sights to show you!',
-  //       __v:0
-  //     })
-  //     })
+      .post('/api/v1/tweet/')
+      .send({ tweetId: tweet._id, handle: 'Pinhead', text: 'We have such sights to show you!' })
+      .then(res => {
+        expect(res.body).toEqual({
+          _id: expect.any(String),
+          handle: 'Pinhead',
+          text: 'We have such sights to show you!',
+          __v:0
+        });
+      });
   });
 });
