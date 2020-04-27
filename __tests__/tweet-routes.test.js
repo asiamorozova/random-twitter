@@ -18,7 +18,7 @@ describe('app routes', () => {
   });
 
   //test post route 
-  it('creates a comment', async() => {
+  it('creates a tweet', async() => {
     const tweet = await Tweet.create({ handle: 'Black Phillip', text: 'Wouldst thou like to live deliciously?' });
 
     return request(app)
